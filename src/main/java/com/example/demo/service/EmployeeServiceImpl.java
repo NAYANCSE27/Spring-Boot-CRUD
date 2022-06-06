@@ -1,18 +1,22 @@
-package service;
+package com.example.demo.service;
 
-import model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
-import repository.EmployeeRepository;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.model.Employee;
+import com.example.demo.repository.EmployeeRepository;
 
 import java.util.List;
 
-public class EmployeeServiceImpl implements EmployeeService{
+@Service
+public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
     private EmployeeRepository employeeRepository;
 
     @Override
     public List<Employee> getAllEmployees() {
+
         return employeeRepository.findAll();
     }
 }
